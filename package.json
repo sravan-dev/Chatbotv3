@@ -1,0 +1,30 @@
+{
+  "name": "chatbotv3",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run build:admin && npm run build:widget",
+    "build:admin": "vite build",
+    "build:widget": "npm run build:widget:app && npm run build:widget:loader",
+    "build:widget:app": "cross-env BUILD_TARGET=widget vite build",
+    "build:widget:loader": "node scripts/build-widget-loader.mjs",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.100.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "cross-env": "^10.1.0",
+    "esbuild": "^0.27.4",
+    "typescript": "^6.0.2",
+    "vite": "^8.0.3"
+  }
+}
